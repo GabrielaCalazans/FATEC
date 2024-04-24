@@ -1,12 +1,12 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    altura_queda_livre.py                              :+:      :+:    :+:    #
+#    tempo_queda_livre.py                               :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: gacalaza <gacalaza@student.42sp.org.br     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/24 19:02:30 by gacalaza          #+#    #+#              #
-#    Updated: 2024/04/24 19:37:13 by gacalaza         ###   ########.fr        #
+#    Updated: 2024/04/24 20:23:17 by gacalaza         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,7 @@ nomePrograma = "Calculo do tempo de queda.\n"
 
 print (nomePrograma)
 altura = float(input('Digite a altura: '))
-tq = (2 * altura) / g
+tq = math.sqrt(2 * altura) / g
 
 os.system("clear")
 

@@ -6,7 +6,7 @@
 #    By: gacalaza <gacalaza@student.42sp.org.br     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/04/24 19:02:50 by gacalaza          #+#    #+#              #
-#    Updated: 2024/04/24 19:36:39 by gacalaza         ###   ########.fr        #
+#    Updated: 2024/04/24 20:26:06 by gacalaza         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ diametro = 0
 perimetro = 0
 raio = 0
 area = 0
-nomePrograma = "Calculo da área de um perímetro.\n"
+nomePrograma = "Calculo da área de um perímetro de um círculo.\n"
 
 print (nomePrograma)
 perimetro = float(input('Digite o perímetro: '))
