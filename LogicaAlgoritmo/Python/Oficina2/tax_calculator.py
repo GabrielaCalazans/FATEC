@@ -6,7 +6,7 @@
 #    By: gacalaza <gacalaza@student.42sp.org.br     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/08 18:13:32 by gacalaza          #+#    #+#              #
-#    Updated: 2024/05/08 20:05:52 by gacalaza         ###   ########.fr        #
+#    Updated: 2024/05/08 20:19:39 by gacalaza         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,24 +34,25 @@ def	result_prog(income):
 	if income <= 0:
 		print("Invalid income value.\n Please, try again.")
 		return
-	if income < 85529:
-		float(tax = income * 0.18)
+	elif income < 85529:
+		tax = income * 0.18
 		tax_relief = -556
-	if income > 85528:
-		float(tax = income * 0.32)
+	else:
+		tax = income * 0.32
 		tax_relief = 14839
+	
 	if tax <= 0:
 		tax = 0.0
 		print(f"The tax is: {tax}")
 	else:
-		print(f"The tax is: {tax} thalers")
+		print(f"The tax is: {tax + tax_relief} thalers")
 
 def	main():
 	nomePrograma()
 	income = 0
 	while True:
 		show_menu()
-		option = input("Enter your annual income: ")
+		option = input("Type your option: ")
 
 		if option == "1":
 			income = add_income()
