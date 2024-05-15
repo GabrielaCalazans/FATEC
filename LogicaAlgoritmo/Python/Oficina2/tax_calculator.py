@@ -6,7 +6,7 @@
 #    By: gacalaza <gacalaza@student.42sp.org.br     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/08 18:13:32 by gacalaza          #+#    #+#              #
-#    Updated: 2024/05/08 20:19:39 by gacalaza         ###   ########.fr        #
+#    Updated: 2024/05/11 19:58:59 by gacalaza         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ def	nomePrograma():
 	os.system("clear")
 
 def	add_income():
-	return float(input("Enter your annual income: "))
+	return float(input("Enter the annual income: "))
 
 def	show_menu():
 	print("Menu:")
@@ -31,21 +31,24 @@ def	show_menu():
 
 def	result_prog(income):
 	tax = 0.0
+	tax_percent = 0.0
+	taxEquality = 0.0
+	extra_income = 0
 	if income <= 0:
-		print("Invalid income value.\n Please, try again.")
-		return
+		tax = 0.0
+		extra_income = 0.0
 	elif income < 85529:
-		tax = income * 0.18
-		tax_relief = -556
+		extra_income = 0.0
+		taxEquality = -556.2
+		tax_percent = 0.18
 	else:
-		tax = income * 0.32
-		tax_relief = 14839
-	
+		extra_income = - 85529
+		taxEquality = 14839.2
+		tax_percent = 0.32
+	tax = round(float((income + extra_income) * tax_percent) + taxEquality, 0)
 	if tax <= 0:
 		tax = 0.0
-		print(f"The tax is: {tax}")
-	else:
-		print(f"The tax is: {tax + tax_relief} thalers")
+	print(f"The tax is: {tax} thalers")
 
 def	main():
 	nomePrograma()
