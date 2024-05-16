@@ -6,7 +6,7 @@
 #    By: gacalaza <gacalaza@student.42sp.org.br     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/14 16:28:20 by gacalaza          #+#    #+#              #
-#    Updated: 2024/05/14 19:04:30 by gacalaza         ###   ########.fr        #
+#    Updated: 2024/05/16 16:34:10 by gacalaza         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -50,19 +50,28 @@ import os
 import time
 import sys
 
+# Definindo a quantidade máxima de bois
 MAX_BOIS = 90
 
+# Função para exibir o nome do programa
+#	Exibe o nome do programa e limpa a tela após 2 segundos.
 def	nomePrograma():
 	print ("Registrador de peso de gado\n")
 	time.sleep(2)
 	os.system("clear")
 
+# Função para exibir o menu de opções
+#	Exibe o menu de opções para o usuário.
 def	show_menu():
 	print("Menu:")
 	print("1. Para INSERIR o peso e ID do boi")
 	print("2. Para EXIBIR os resultados até o momento")
 	print("5. To EXIT the program")
 
+# Função para adicionar o ID do boi
+#	Solicita e retorna o ID do boi inserido pelo usuário.
+#	Args: i (int): Número de bois já inseridos.
+#	Returns: int: ID do boi inserido pelo usuário.
 def	add_cow_id(i):
 	print(f"Total de bois que ainda podem ser inseridos {MAX_BOIS - i}")
 	while True:
@@ -74,6 +83,10 @@ def	add_cow_id(i):
 		except ValueError as e:
 			print(e)
 
+# Função para adicionar o peso do boi
+#	Solicita e retorna o peso do boi inserido pelo usuário.
+#	Args: i (int): Número de bois já inseridos.
+#	Returns: float: Peso do boi inserido pelo usuário.
 def	add_cow_weight(i):
 	print(f"Total de bois que ainda podem ser inseridos {MAX_BOIS - i}")
 	while True:
@@ -100,6 +113,8 @@ def	result_prog(cattle_id, cattle_weight, count):
 	print(f"\nO peso do boi mais gordo é: {fat_cattle}\nO ID do boi mais gordo é: {fat_id}\n")
 	print(f"\nO peso do boi mais magro é: {lean_cattle}\nO ID do boi mais magro é: {lean_id}\n")
 
+# Função principal do programa
+#	Função principal do programa que gerencia o fluxo de execução.
 def	main():
 	nomePrograma()
 	cattle_id = []
@@ -115,10 +130,12 @@ def	main():
 		elif option == "2":
 			result_prog(cattle_id, cattle_weight, i)
 		elif option == "5":
+			print("Encerrando o programa...")
 			break
 		else:
 			print("Opção inválida. Tente novamente.\n")
 	if (i == MAX_BOIS):
 		result_prog(cattle_id, cattle_weight, i)
+		print("Encerrando o programa...")
 
 main()

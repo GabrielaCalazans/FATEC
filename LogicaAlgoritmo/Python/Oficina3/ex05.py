@@ -6,7 +6,7 @@
 #    By: gacalaza <gacalaza@student.42sp.org.br     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/14 15:57:18 by gacalaza          #+#    #+#              #
-#    Updated: 2024/05/14 16:28:16 by gacalaza         ###   ########.fr        #
+#    Updated: 2024/05/16 15:46:36 by gacalaza         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,17 +22,24 @@ import os
 import time
 import sys
 
+# Função para exibir o nome do programa
+#	Exibe o nome do programa e limpa a tela após 2 segundos.
 def	nomePrograma():
 	print ("Calculador de peso\n")
 	time.sleep(2)
 	os.system("clear")
 
+# Função para exibir o menu com 3 opções para o usuário
 def	show_menu():
 	print("Menu:")
 	print("1. Para inserir o peso da caixa a ser colocada no caminhão")
 	print("2. Para Exibir a média de peso.")
 	print("5. To EXIT the program")
 
+# Função para adicionar o peso de uma caixa
+# Solicita e retorna o peso de uma caixa inserido pelo usuário.
+#	Args: i (int): Número de caixas já inseridas.
+#	Returns: float: Peso da caixa inserido pelo usuário.
 def	add_box(i):
 	print(f"Número espaços de caixas disponível {200 - i}")
 	while True:
@@ -42,6 +49,12 @@ def	add_box(i):
 		except ValueError:
 			print('Digite um número válido')
 
+# Função para exibir o resultado do programa
+#	Calcula e exibe o número total de caixas inseridas, o peso total das caixas,
+#	a média de peso e verifica se o peso total excede o limite do caminhão.
+#	Args:
+#		boxes (list): Lista contendo os pesos das caixas inseridas.
+#		count (int): Número de caixas inseridas.
 def	result_prog(boxes, count):
 	total = 0
 	if (count < 2):
@@ -57,25 +70,37 @@ def	result_prog(boxes, count):
 		print("Peso do caminhão está dentro do esperado.\n\n")
 	else:
 		print("Peso do caminhão foi excedido, retire algumas caixas e recalcule.\n\n")
+		print("Encerrando o programa...")
 		sys.exit()
 
+# Função principal do programa
+#	Função principal do programa que gerencia o fluxo de execução.
 def	main():
 	nomePrograma()
 	boxes = []
+	box = 0
+	total_weight = 0
 	i = 0
 	while (i < 200):
 		show_menu()
 		option = input("Escolha uma opção ")
 
 		if option == "1":
-			boxes.append(add_box(i))
+			box = add_box(i)
+			boxes.append(box)
+			total_weight += box
 			i += 1
 		elif option == "2":
 			result_prog(boxes, i)
 		elif option == "5":
+			print("Encerrando o programa...")
 			break
 		else:
 			print("Opção inválida. Tente novamente.\n")
+		if total_weight > 10000:
+			print("Peso do caminhão foi excedido, retire algumas caixas e recalcule.\n\n")
+			print("Saindo do programa...")
+			break
 	if (i == 200):
 		result_prog(boxes, i)
 
