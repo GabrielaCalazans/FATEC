@@ -6,7 +6,7 @@
 #    By: gacalaza <gacalaza@student.42sp.org.br     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/18 18:01:47 by gacalaza          #+#    #+#              #
-#    Updated: 2024/05/21 15:00:32 by gacalaza         ###   ########.fr        #
+#    Updated: 2024/05/22 16:10:02 by gacalaza         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,6 +29,7 @@ def	nomePrograma():
 	time.sleep(2)
 	os.system("clear")
 
+
 def	is_prime(n):
 	i = 2
 	if (n == 2):
@@ -38,6 +39,7 @@ def	is_prime(n):
 			result = "não é um número primo"
 		i += 1
 	print(f"O número {n} {result}")
+
 
 def	ask_age():
 	age = int(input("Digite a sua idade: "))
@@ -49,6 +51,7 @@ def	ask_age():
 	print("Maior de idade: %r"% result)
 	return (age)
 
+
 def	main():
 	nomePrograma()
 	nbr = int(input("Digite um número para verificar se é primo: "))
@@ -56,5 +59,6 @@ def	main():
 	nbr = ask_age()
 	print("Vamos verificar se sua idade é um número primo")
 	is_prime(nbr)
+
 
 main()

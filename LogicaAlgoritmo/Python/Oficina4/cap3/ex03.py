@@ -6,7 +6,7 @@
 #    By: gacalaza <gacalaza@student.42sp.org.br     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/21 18:16:14 by gacalaza          #+#    #+#              #
-#    Updated: 2024/05/22 14:53:21 by gacalaza         ###   ########.fr        #
+#    Updated: 2024/05/22 16:08:52 by gacalaza         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,6 +30,7 @@ def	nomePrograma():
 	time.sleep(2)
 	os.system("clear")
 
+
 def	add_age():
 	message = "Digite a sua idade:\t"
 	while True:
@@ -43,6 +44,7 @@ def	add_age():
 				print("Insira uma idade válida.")
 			else:
 				print(e)
+
 
 def	process_age_rating(user_age):
 	if (user_age >= 0 and user_age < 12):
@@ -59,10 +61,12 @@ def	process_age_rating(user_age):
 		age_rating = "Idoso"
 	print(f"\nSua classificação etária é: {age_rating}\n")
 
+
 def	main():
 	nomePrograma()
 	user_age = add_age()
 	process_age_rating(user_age)
 	print("Encerrando o programa...\n")
+
 
 main()

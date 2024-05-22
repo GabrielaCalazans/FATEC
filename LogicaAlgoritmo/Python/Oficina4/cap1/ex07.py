@@ -6,7 +6,7 @@
 #    By: gacalaza <gacalaza@student.42sp.org.br     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/21 14:44:25 by gacalaza          #+#    #+#              #
-#    Updated: 2024/05/22 14:42:33 by gacalaza         ###   ########.fr        #
+#    Updated: 2024/05/22 16:10:28 by gacalaza         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,6 +31,7 @@ def	nomePrograma():
 	time.sleep(2)
 	os.system("clear")
 
+
 def	add_nbr(check):
 	if (check == SQRT):
 		message = "Digite um número para calcular sua raiz:\t"
@@ -54,12 +55,14 @@ def	add_nbr(check):
 			else:
 				print(e)
 
+
 def	math_process(square, pow_b, pow_e, check):
 	if (check == SQRT):
 		result = math.sqrt(square)
 	if (check == POW_B or check == POW_E):
 		result = math.pow(pow_b, pow_e)
 	return (result)
+
 
 def	check_update():
 	option = add_nbr(OPTION)
@@ -68,6 +71,7 @@ def	check_update():
 	elif (option == 2):
 		result = False
 	return (result)
+
 
 def	main():
 	nomePrograma()
@@ -81,7 +85,7 @@ def	main():
 		print(f"A raiz quadrada de {square} é igual: {square_r}")
 		print(f"{pow_b} elevado a potência {pow_e} é igual: {pow_r}")
 		check = check_update()
-
 	print("Encerrando o programa...")
+
 
 main()

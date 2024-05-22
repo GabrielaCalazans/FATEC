@@ -6,7 +6,7 @@
 #    By: gacalaza <gacalaza@student.42sp.org.br     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/21 18:15:56 by gacalaza          #+#    #+#              #
-#    Updated: 2024/05/22 14:50:44 by gacalaza         ###   ########.fr        #
+#    Updated: 2024/05/22 16:11:06 by gacalaza         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,6 +25,7 @@ def	nomePrograma():
 	time.sleep(2)
 	os.system("clear")
 
+
 def	add_year():
 	message = "Digite o ano de seu nascimento:\t"
 	while True:
@@ -39,6 +40,7 @@ def	add_year():
 			else:
 				print(e)
 
+
 def	process_year(current_year, user_year):
 	user_age = int(current_year) - user_year
 	if (user_age == 18):
@@ -48,6 +50,7 @@ def	process_year(current_year, user_year):
 	else:
 		print(f"\nVocê irá completar 18 anos em {18 - user_age} anos.")
 
+
 def	main():
 	nomePrograma()
 	current_year = date.today()
@@ -55,5 +58,6 @@ def	main():
 	user_year = add_year()
 	process_year(current_year, user_year)
 	print("\nEncerrando o programa...\n")
+
 
 main()

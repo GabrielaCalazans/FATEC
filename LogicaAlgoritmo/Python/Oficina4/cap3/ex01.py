@@ -6,7 +6,7 @@
 #    By: gacalaza <gacalaza@student.42sp.org.br     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/21 18:15:20 by gacalaza          #+#    #+#              #
-#    Updated: 2024/05/21 20:50:40 by gacalaza         ###   ########.fr        #
+#    Updated: 2024/05/22 16:10:53 by gacalaza         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,6 +30,7 @@ def	nomePrograma():
 	time.sleep(2)
 	os.system("clear")
 
+
 def	add_grade(check):
 	if (check == GRADE1):
 		message = "Digite a primeira nota para calculo da média do aluno:\t"
@@ -49,6 +50,7 @@ def	add_grade(check):
 			else:
 				print(e)
 
+
 def	process_grade(final_grade):
 	if (final_grade < 7):
 		result = "Reprovado"
@@ -56,16 +58,16 @@ def	process_grade(final_grade):
 		result = "Aprovado"
 	return (result)
 
+
 def	main():
 	nomePrograma()
 	grade1 = add_grade(GRADE1)
 	grade2 = add_grade(GRADE2)
 	grade3 = add_grade(GRADE3)
-
 	final_grade = (grade1 + grade2 + grade3) / 3
 	result = process_grade(final_grade)
 	print(f"\n\nMédia do aluno é: %d. \nCom está média o aluno está {result}.\n\n"%final_grade)
-
 	print("Encerrando o programa...\n")
+
 
 main()

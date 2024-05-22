@@ -6,7 +6,7 @@
 #    By: gacalaza <gacalaza@student.42sp.org.br     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/21 14:42:39 by gacalaza          #+#    #+#              #
-#    Updated: 2024/05/21 16:35:11 by gacalaza         ###   ########.fr        #
+#    Updated: 2024/05/22 16:10:12 by gacalaza         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,6 +26,7 @@ def	nomePrograma():
 	time.sleep(2)
 	os.system("clear")
 
+
 def	add_nbr():
 	while True:
 		try:
@@ -33,6 +34,7 @@ def	add_nbr():
 			return (nbr)
 		except ValueError:
 			print('Digite um número válido')
+
 
 def	check_digits(n):
 	if (n > 9 and n < 100):
@@ -42,6 +44,7 @@ def	check_digits(n):
 		result = False
 	return (result)
 
+
 def	main():
 	nomePrograma()
 	check = True
@@ -49,5 +52,6 @@ def	main():
 		check = check_digits(add_nbr())
 
 	print("Encerrando o programa...")
+
 
 main()

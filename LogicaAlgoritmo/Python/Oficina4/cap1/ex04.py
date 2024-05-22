@@ -6,7 +6,7 @@
 #    By: gacalaza <gacalaza@student.42sp.org.br     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/18 17:40:43 by gacalaza          #+#    #+#              #
-#    Updated: 2024/05/18 17:50:06 by gacalaza         ###   ########.fr        #
+#    Updated: 2024/05/22 16:09:53 by gacalaza         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,8 +18,10 @@
 def	add_name():
 	return (str(input("Favor inserir o seu nome: ")))
 
+
 def	add_age():
 	return (int(input("Favor inserir a sua idade: ")))
+
 
 def	main():
 	name = add_name()

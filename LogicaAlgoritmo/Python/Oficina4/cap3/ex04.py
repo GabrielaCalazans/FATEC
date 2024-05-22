@@ -6,7 +6,7 @@
 #    By: gacalaza <gacalaza@student.42sp.org.br     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/21 18:17:45 by gacalaza          #+#    #+#              #
-#    Updated: 2024/05/22 15:14:21 by gacalaza         ###   ########.fr        #
+#    Updated: 2024/05/22 16:09:01 by gacalaza         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,6 +25,7 @@ def	nomePrograma():
 	time.sleep(2)
 	os.system("clear")
 
+
 def	add_nbr(check):
 	if (check == 1):
 		message = "Insira um número para a verificação:\t"
@@ -40,8 +41,10 @@ def	add_nbr(check):
 			else:
 				print(e)
 
+
 def	process_rating(n1, n2):
 	return n1 > n2 and n1 or n2
+
 
 def	main():
 	nomePrograma()
@@ -50,5 +53,6 @@ def	main():
 	max_nbr = process_rating(nbr1, nbr2)
 	print("\n\nO maior número é %d\n"%max_nbr)
 	print("Encerrando o programa...\n")
+
 
 main()
