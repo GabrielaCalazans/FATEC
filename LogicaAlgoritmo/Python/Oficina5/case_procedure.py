@@ -6,7 +6,7 @@
 #    By: gacalaza <gacalaza@student.42sp.org.br     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/23 14:41:23 by gacalaza          #+#    #+#              #
-#    Updated: 2024/05/23 20:38:40 by gacalaza         ###   ########.fr        #
+#    Updated: 2024/05/23 20:50:01 by gacalaza         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -125,5 +125,7 @@ def	main():
 				break
 			case _:
 				print("Opção inválida. Tente novamente.\n")
+	result_research(answers_lst)
+
 
 main()
