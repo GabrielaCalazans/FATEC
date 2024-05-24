@@ -6,7 +6,7 @@
 #    By: gacalaza <gacalaza@student.42sp.org.br     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/18 18:01:47 by gacalaza          #+#    #+#              #
-#    Updated: 2024/05/22 16:10:02 by gacalaza         ###   ########.fr        #
+#    Updated: 2024/05/23 21:35:20 by gacalaza         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,8 @@
 # escreva no console, ‘True’ caso ele já tenha alcançado a maioridade (18 anos), 
 # caso contrário escreva ‘False’. 
 # Escreva após o cálculo se o número é ou não primo. 
-# Pergunte ao usuário se ele quer digitar um novo número e reiniciar o processamento ou finalizar o processamento.
+# Pergunte ao usuário se ele quer digitar um novo número e reiniciar o 
+# processamento ou finalizar o processamento.
 
 # -*- coding: utf-8 -*-
 import os
@@ -30,8 +31,22 @@ def	nomePrograma():
 	os.system("clear")
 
 
+def	add_option():
+	while True:
+		try:
+			opt = str(input("Deseja inserir digitar um novo número e reiniciar? - Responda 'sim' ou 'não':\t"))
+			if (opt != "sim" and opt != "não"):
+				raise ValueError("Opção inválida. Tente novamente.\n")
+			return (opt)
+		except ValueError:
+			print('Digite uma resposta válida\n')
+
+
 def	is_prime(n):
 	i = 2
+	result = "é um número primo."
+	if (n == 1):
+		result = "não é um número primo"
 	if (n == 2):
 		result = "é um número primo."
 	while (i < n):
@@ -54,11 +69,16 @@ def	ask_age():
 
 def	main():
 	nomePrograma()
-	nbr = int(input("Digite um número para verificar se é primo: "))
-	is_prime(nbr)
-	nbr = ask_age()
-	print("Vamos verificar se sua idade é um número primo")
-	is_prime(nbr)
+	while True:
+		nbr = int(input("Digite um número para verificar se é primo: "))
+		is_prime(nbr)
+		nbr = ask_age()
+		print("Vamos verificar se sua idade é um número primo")
+		is_prime(nbr)
+		opt = add_option()
+		if (opt == "não"):
+			print("Encerrando o programa...")
+			break
 
 
 main()

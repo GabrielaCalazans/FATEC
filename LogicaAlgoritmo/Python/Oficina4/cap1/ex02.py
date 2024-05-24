@@ -6,7 +6,7 @@
 #    By: gacalaza <gacalaza@student.42sp.org.br     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/18 17:29:41 by gacalaza          #+#    #+#              #
-#    Updated: 2024/05/18 17:53:21 by gacalaza         ###   ########.fr        #
+#    Updated: 2024/05/23 17:52:29 by gacalaza         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,11 +14,11 @@
 # Digite o nome da sua namorada e a do seu amigo. 
 # Pule mais algumas linhas e faça um retângulo com o nome do seu amigo e o da namorada dele dentro do retângulo. 
 
-print("\n\nAdele, Angelina Jolie, Brad Pitt, Jennifer Aniston\n\n\n")
-print("Adele")
-print("Brad Pitt")
-print("Angelina Jolie")
-print("Jennifer Aniston\n\n")
+print("\n\nJim, Jimi Hendrix, Erykah Badu, Derrick Green\n\n\n")
+print("Nina")
+print("Jimi Hendrix")
+print("Erykah Badu")
+print("Derrick Green\n\n")
 
 i = 0
 k = 0
@@ -35,13 +35,13 @@ while (i < 11):
 		else:
 			j = i
 		if (i == 6):
-			print("   Adele   ", end="")
+			print("    Nina   ", end="")
 		elif (i == 7):
-			print("  Brad Pitt  ", end="")
+			print(" Erykah Badu ", end="")
 		elif (i == 9):
-			print(" Angelina Jolie  ", end="")
+			print("  Jimi Hendrix   ", end="")
 		elif (i == 10):
-			print(" Jennifer Aniston  ", end="")
+			print("   Derrick Green   ", end="")
 		else:
 			for x in range(j):
 				print(" ", end="")
