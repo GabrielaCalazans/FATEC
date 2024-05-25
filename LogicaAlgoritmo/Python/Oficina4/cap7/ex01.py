@@ -6,12 +6,16 @@
 #    By: gacalaza <gacalaza@student.42sp.org.br     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/22 19:21:24 by gacalaza          #+#    #+#              #
-#    Updated: 2024/05/22 19:27:51 by gacalaza         ###   ########.fr        #
+#    Updated: 2024/05/25 15:28:13 by gacalaza         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 # Faça um programa que inicialize uma lista de compras com 5 itens diferentes
 # e exiba todos utilizando um laço de repetição while. 
+
+# -*- coding: utf-8 -*-
+import os
+import time
 
 # -*- coding: utf-8 -*-
 import os
@@ -24,4 +28,42 @@ def	nomePrograma():
 	time.sleep(2)
 	os.system("clear")
 
+
+def	add_item(i):
+	if (i == 0):
+		return ("- pão")
+	if (i == 1):
+		return ("- detergente")
+	if (i == 2):
+		return ("- sabão")
+	if (i == 3):
+		return ("- papel toalha")
+	if (i == 4):
+		return ("- feijão")
+
+
+def	init_lst(grocery_lst):
+	i = 0
+	while i < 5:
+		grocery_lst.append(add_item(i))
+		i += 1
+	return (grocery_lst)
+
+
+def	main():
+	nomePrograma()
+	i = 0
+	grocery_lst = []
+	grocery_lst = init_lst(grocery_lst)
+
+	i = 0
+	print("Lista preenchida:")
+	while i < 5:
+		print(grocery_lst[i])
+		i += 1
+	print("\n\n")
+	print("Encerrando o programa...\n\n")
+
+
+main()
 

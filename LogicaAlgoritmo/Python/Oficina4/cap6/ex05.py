@@ -6,7 +6,7 @@
 #    By: gacalaza <gacalaza@student.42sp.org.br     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/22 18:56:35 by gacalaza          #+#    #+#              #
-#    Updated: 2024/05/22 19:20:53 by gacalaza         ###   ########.fr        #
+#    Updated: 2024/05/25 15:14:49 by gacalaza         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,4 +26,24 @@ def	nomePrograma():
 	os.system("clear")
 
 
-	
+def	process_program():
+	i = 0
+	for x in range(11):
+		print(f"\nTabuada do {i}:")
+		for x in range(11):
+			if (x == 10):
+				print(f"{i} x {x} = ", i * x)
+			else:
+				print(f"{i} x {x} =  ", i * x)
+		i += 1
+	print("\n\n")
+
+
+def	main():
+	nomePrograma()
+	process_program()
+	print("\n\n")
+	print("Encerrando o programa...\n\n")
+
+
+main()
