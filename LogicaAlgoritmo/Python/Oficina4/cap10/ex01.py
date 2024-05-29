@@ -6,7 +6,7 @@
 #    By: gacalaza <gacalaza@student.42sp.org.br     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/22 19:48:50 by gacalaza          #+#    #+#              #
-#    Updated: 2024/05/22 19:51:58 by gacalaza         ###   ########.fr        #
+#    Updated: 2024/05/29 15:34:50 by gacalaza         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,5 +27,12 @@ def	nomePrograma():
 	time.sleep(2)
 	os.system("clear")
 
+
+def	main():
+	lambda_func = lambda : print("This is not my first Lambda function.")
+	lambda_func()
+
+
+main()
 
 

@@ -6,7 +6,7 @@
 #    By: gacalaza <gacalaza@student.42sp.org.br     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/22 19:25:30 by gacalaza          #+#    #+#              #
-#    Updated: 2024/05/28 16:22:51 by gacalaza         ###   ########.fr        #
+#    Updated: 2024/05/28 19:34:11 by gacalaza         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -61,5 +61,4 @@ def	main():
 	process_value(shopping_lst)
 
 main()
-
 

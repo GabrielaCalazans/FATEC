@@ -6,7 +6,7 @@
 #    By: gacalaza <gacalaza@student.42sp.org.br     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/05/22 19:40:11 by gacalaza          #+#    #+#              #
-#    Updated: 2024/05/22 19:44:46 by gacalaza         ###   ########.fr        #
+#    Updated: 2024/05/28 17:00:06 by gacalaza         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,9 +21,17 @@ import time
 
  # Função para exibir o nome do programa
 #	Exibe o nome do programa e limpa a tela após 2 segundos.
-def	nomePrograma():
+def	programName():
 	print ("Minha primeira função\n")
 	time.sleep(2)
 	os.system("clear")
 
 
+def	my_notfirst_func():
+	print("This is not my first function.")
+
+
+def	main():
+	my_notfirst_func()
+
+main()
