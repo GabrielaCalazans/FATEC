@@ -7,5 +7,8 @@ This repository contains activities, tests, and projects developed as part of th
 
 - `LogicaAlgoritimo/`: This folder contains the activities developed during the first semester of the Algorithm and Programming Logic course, taught by Prof. Carmen L. B. Costa.
 
+- `LogicaAlgoritimo/`: This folder contains the activities developed during the first semester of the Algorithm and Programming Logic course, taught by Prof. Carmen L. B. Costa.
+
+
 Each directory contains files related to the respective activity, test, or project, as specified during the course.
 
