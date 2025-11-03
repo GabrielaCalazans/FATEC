@@ -41,14 +41,62 @@ export class ContatosPage {
     });
     await alert.present();
   }
+
+  private isValidNome(nome: string): boolean {
+    return /^[A-Za-zÀ-ÖØ-öø-ÿ\s]+$/.test(nome.trim());
+  }
+
+  private isValidTelefone(telefone: string): boolean {
+    return /^\d{10,11}$/.test(telefone);
+  }
+
+  private containsAt(email: string): boolean {
+    return email.indexOf('@') !== -1;
+  }
+
+  private isEmailUnique(email: string): boolean {
+    return !this.contatos.some(c => c.email === email);
+}
   
   
   async salvarContato() {
-    if (!this.novoContato.nome || !this.novoContato.email) {
+    const nome = (this.novoContato.nome || '').trim();
+    const email = (this.novoContato.email || '').trim();
+    const telefone = (this.novoContato.telefone || '').trim();
+
+    if (!nome || !email) {
       await this.presentAlert('Preencha pelo menos o nome e o e-mail!', 'Erro');
       return;
     }
-    this.contatos.push({ ...this.novoContato });
+
+    if (!this.isValidNome(nome)) {
+      await this.presentAlert('Nome inválido. Use apenas letras e espaços.', 'Erro');
+      return;
+    }
+
+    if (!this.containsAt(email)) {
+      await this.presentAlert('Email inválido. Deve conter o caractere "@"', 'Erro');
+      return;
+    }
+
+    if (!this.isEmailUnique(email)) {
+      await this.presentAlert('Email já cadastrado. Use um email diferente.', 'Erro');
+      return;
+    }
+
+    if (telefone) {
+      if (!this.isValidTelefone(telefone)) {
+        await this.presentAlert('Telefone inválido. Deve conter apenas números e ter 10 ou 11 dígitos.', 'Erro');
+        return;
+      }
+    }
+    this.contatos.push({
+      nome,
+      email,
+      telefone,
+      nascimento: this.novoContato.nascimento,
+      horaContato: this.novoContato.horaContato
+    });
     this.novoContato = { nome: '', email: '', telefone: '', nascimento: '', horaContato: '' };
     await this.presentToast('Contato salvo com sucesso!', 'success');
   }
