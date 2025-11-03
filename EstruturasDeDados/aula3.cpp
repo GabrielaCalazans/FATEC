@@ -157,7 +157,7 @@ int	subtractArrays(void) {
 				break;
 			}
 		}
-		std::cerr << "Entrada inválida. Certifique-se de inserir exatamente 8 números separados por espaço.\n";
+		std::cerr << "Entrada inválida. Certifique-se de inserir exatamente 10 números separados por espaço.\n";
 	}
 
 	std::cout << "\nMatriz C = valores da matriz A - B :\n";
@@ -302,7 +302,6 @@ std::vector<int> a, b, c;
 std::string input;
 int num;
 
-// Função para ler números
 bool	readNumbers(std::vector<int>& vec, int count, const std::string& prompt) {
 	while (true) {
 		std::cout << prompt;
@@ -324,7 +323,6 @@ int	mergeArraysAgain(void) {
 	system("cls");
 	std::cout << "** f) LÊ 20 ELEMENTOS PARA A MATRIZ A, 30 PARA B E COMBINA-OS NA MATRIZ C **" << std::endl;
 
-	// Ler os números para A e B
 	if (!readNumbers(a, 20, "Digite 20 números separados por espaço para a matriz A: ")) {
 		return 1;
 	}
@@ -332,11 +330,9 @@ int	mergeArraysAgain(void) {
 		return 1;
 	}
 
-	// Combinar os vetores A e B na matriz C
 	c.insert(c.end(), a.begin(), a.end());
 	c.insert(c.end(), b.begin(), b.end());
 
-	// Exibir a matriz C
 	std::cout << "\nMatriz C (resultado da junção de A e B):\n";
 	for (int value : c) {
 		std::cout << value << " ";
@@ -358,20 +354,17 @@ int	reverseArrays(void) {
 
 	std::vector<int> a(20), b(20);
 
-	// Ler os números para A
 	if (!readNumbers(a, 20, "Digite 20 números separados por espaço para a matriz A: ")) {
 		return 1;
 	}
 
-	// Construir a matriz B invertendo os elementos de A
 	for (int i = 0; i < 20; ++i) {
-		b[i] = a[19 - i];  // Invertendo os elementos
+		b[i] = a[19 - i]; 
 	}
 
-	// Exibir as matrizes A e B lado a lado
 	std::cout << "\nMatriz A e B (invertida) lado a lado:\n";
 	for (int i = 0; i < 20; ++i) {
-		std::cout << "A[" << i << "] = " << a[i] << " | B[" << i << "] = " << b[i] << std::endl;
+		std::cout << "A[" << i << "] = " << a[i] << " \t| B[" << i << "] = " << b[i] << std::endl;
 	}
 
 	system("pause");
@@ -383,42 +376,41 @@ int	reverseArrays(void) {
 int	main (void) {
 	int result;
 
-	// a)
-	if (readAndDisplayArray()) {
-		std::cerr << "Erro ao executar a função readAndDisplayArray.\n";
-		return 1;
-	}
-	// b)
-	if (multbythree()) {
-		std::cerr << "Erro ao executar a função multbythree.\n";
-		return 1;
-	}
-	// c)
-	if (subtractArrays()) {
-		std::cerr << "Erro ao executar a função subtractArrays.\n";
-		return 1;
-	}
-	// d)
-	if (squareMatrix()) {
-		std::cerr << "Erro ao executar a função squareMatrix.\n";
-		return 1;
-	}
-	// e)
-	if (mergeArrays()) {
-		std::cerr << "Erro ao executar a função mergeArrays.\n";
-		return 1;
-	}
-	f)
-	if (mergeArraysAgain()) {
-		std::cerr << "Erro ao executar a função mergeArraysAgain.\n";
-		return 1;
-	}
+	// // a)
+	// if (readAndDisplayArray()) {
+	// 	std::cerr << "Erro ao executar a função readAndDisplayArray.\n";
+	// 	return 1;
+	// }
+	// // b)
+	// if (multbythree()) {
+	// 	std::cerr << "Erro ao executar a função multbythree.\n";
+	// 	return 1;
+	// }
+	// // c)
+	// if (subtractArrays()) {
+	// 	std::cerr << "Erro ao executar a função subtractArrays.\n";
+	// 	return 1;
+	// }
+	// // d)
+	// if (squareMatrix()) {
+	// 	std::cerr << "Erro ao executar a função squareMatrix.\n";
+	// 	return 1;
+	// }
+	// // e)
+	// if (mergeArrays()) {
+	// 	std::cerr << "Erro ao executar a função mergeArrays.\n";
+	// 	return 1;
+	// }
+	// // f)
+	// if (mergeArraysAgain()) {
+	// 	std::cerr << "Erro ao executar a função mergeArraysAgain.\n";
+	// 	return 1;
+	// }
 	// g)
 	if (reverseArrays()) {
 		std::cerr << "Erro ao executar a função reverseArrays.\n";
 		return 1;
 	}
-
 
 	return (0);
 }
